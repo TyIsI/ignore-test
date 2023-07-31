@@ -14,6 +14,8 @@ Testing `ignore` to confirm the problem is not in the ignore library.
 
 ### Testing prettier
 
+By manually specifying the _deny-all_ and _permit-test_ files, we can emulate the behaviour of the default value of `.gitignore` and `.prettierignore` as if the `.gitignore` file masked everything.
+
 #### Error behaviour
 
 `ls -1 .prettierignore.* test*.js | xargs -n 1 yarn prettier --ignore-path .prettierignore.deny-all --ignore-path .prettierignore.permit-test --file-info | egrep -B 1 -w ignored`
